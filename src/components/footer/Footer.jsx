@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className=" px-[6%] pt-[60px] pb-[30px]">
+    <div className=" lg:container mx-auto px-5 pt-[60px] pb-[30px]">
       <div className=" flex gap-5 text-[25px]">
         <FaFacebookF className="hover:text-red-600 cursor-pointer" />
         <FaInstagram className="hover:text-red-600 cursor-pointer" />
