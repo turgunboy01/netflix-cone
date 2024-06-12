@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import black_arrow_icon from "../../../public/assets/back_arrow_icon.png";
 import { Link, useParams } from "react-router-dom";
 

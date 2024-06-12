@@ -1,44 +1,33 @@
-import React, { useEffect, useState } from "react";
-import cards_data from "../../../public/assets/cards/Cards_data";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+// import cards_data from "../../../public/assets/cards/Cards_data";
 import { Link } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
-const TitileCards = ({ title, category }) => {
-  const [apiData, setApiData] = useState([]);
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YTU5ZjhkNjg1NmJlNTgwMTQ2NTRjOGIyYmM3YTI2OCIsInN1YiI6IjYxM2RjNzdlZjk2YTM5MDA2MDA2Y2MzNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.T8EOT0rs5mOMFEzMMXc-AkQXiicG0BE_qnO6ELoEyeI",
-    },
-  };
-
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1`,
-      options
-    )
-      .then((response) => response.json())
-      .then((res) => setApiData(res.results))
-      .catch((err) => console.error(err));
-  }, []);
-  console.log(apiData);
+const TitileCards = ({ title, endpoint, category }) => {
+  const { url } = useSelector((state) => state.home);
+  const { data, loading } = useFetch(`/${endpoint}/${category}`);
+  console.log(data);
   return (
-    <div className=" w-[100%] mt-[50px] ">
-      <h2>{title}</h2>
-      <div className="flex overflow-x-scroll gap-5">
-        {apiData.map((item, index) => (
-          <Link
-            to={`/player/${item.id}`}
-            className="w-[240px] h-[140px]"
-            key={index}
-          >
-            <img
-              src={`https://image.tmdb.org/t/p/w500` + item.backdrop_path}
-              className=" cursor-pointer rounded-[4px] object-cover "
-              alt=""
-            />
-          </Link>
+    <div className="w-full mt-12">
+      <h2 className="text-[22px] font-semibold">{title}</h2>
+      <div className="overflow-x-scroll flex gap-[40px] mt-5">
+        {data?.results?.map((item, index) => (
+          <div className="min-w-[300px]" key={index}>
+            <Link
+              to={`/${endpoint}/${item.id}`}
+              className=" w-[240px] h-[140px] relative"
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/w500` + item.backdrop_path}
+                className="cursor-pointer rounded-[4px] object-cover w-full h-full"
+                alt={item.title}
+              />
+              <p className="absolute -bottom-[150px] w-[200px] left-3 ">
+                {item.name || item.title}
+              </p>
+            </Link>
+          </div>
         ))}
       </div>
     </div>
