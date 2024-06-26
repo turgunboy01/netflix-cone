@@ -21,7 +21,7 @@ const MovieCard = ({ data, endpoint }) => {
                 className="cursor-pointer  rounded-[4px]  w-full h-[180px] hover:scale-105 duration-300 transition-all"
                 alt={item.title}
               />
-              <p className="absolute -bottom-[150px] w-[200px] left-3 ">
+              <p className="absolute bottom-[0px] w-[200px] left-3 ">
                 {item.name || item.title}
               </p>
             </Link>
