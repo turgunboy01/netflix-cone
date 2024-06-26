@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import Explore from "./pages/explore/Explore";
 import Player2 from "./pages/player/Player2";
 import Search from "./pages/search/Search";
+import ScrollTop from "./components/ScrollTop";
 
 const App = () => {
   const navigate = useNavigate();
@@ -50,21 +51,13 @@ const App = () => {
 
   // console.log();
   useEffect(() => {
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        console.log("Logged In");
-        navigate("/");
-      } else {
-        console.log("Logged Out ");
-        navigate("/login");
-      }
-    });
     fetchApiConfig();
     genresCall();
   }, []);
   return (
     <div>
       <ToastContainer theme="dark" />
+      <ScrollTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
