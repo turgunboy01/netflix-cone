@@ -7,7 +7,7 @@ const VideoSelection = ({ data }) => {
 
   console.log(data);
   return (
-    <div className="lg:container w-full py-[30px]  mx-auto pt-50px px-5 overflow-x-scroll space-x-5">
+    <div className="lg:container w-full py-[30px]  mx-auto pt-50px px-5 overflow-x-scroll scrollHidden space-x-5">
       <h2 className="text-[40px] py-2 font-bold">More Videos</h2>
       <div className="flex items-center gap-[30px] ">
         {data?.results?.map((video) => (

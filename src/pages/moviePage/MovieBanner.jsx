@@ -37,7 +37,7 @@ const MovieBanner = ({ crew, video }) => {
         backgroundImage: `url('${url.backdrop + data?.backdrop_path} ')`,
       }}
     >
-      <div className="bg-[#0d265a8e] h-full pb-[150px]">
+      <div className="bg-[#0d265a8e] h-full pb-[150px] ">
         <div className=" flex flex-col lg:flex-row pt-[100px]  items-center gap-10 lg:gap-[100px] lg:container mx-auto px-5  lg:h-screen">
           <div className="w-full lg:w-[50%]">
             <img

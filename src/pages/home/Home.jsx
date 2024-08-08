@@ -32,11 +32,13 @@ const Home = () => {
     <div className="overflow-hidden w-full">
       <Navbar />
       <div className="relative ">
-        <img
-          src={`https://image.tmdb.org/t/p/original/${apiData.backdrop_path}`}
-          alt="banner"
-          className="w-[100%] mask1 h-[100vh]  2xl:h-[100%]  opacity-80 "
-        />
+        <div className=" h-[100vh]">
+          <img
+            src={`https://image.tmdb.org/t/p/original/${apiData.backdrop_path}`}
+            alt="banner"
+            className="w-[100%] mask1 h-[100vh]  2xl:h-[100%]  opacity-80 "
+          />
+        </div>
         <div className=" absolute bottom-[20%] pl-[6%]  ">
           <img
             src={`https://image.tmdb.org/t/p/original/${apiData.poster_path}`}

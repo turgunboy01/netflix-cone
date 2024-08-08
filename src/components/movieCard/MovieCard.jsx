@@ -7,7 +7,7 @@ const MovieCard = ({ data, endpoint }) => {
   const { url } = useSelector((state) => state.home);
   return (
     <div className="w-full ">
-      <div className="overflow-x-scroll flex gap-[40px] mt-5 py-3">
+      <div className="overflow-x-scroll scrollHidden flex gap-[40px] mt-5 py-3">
         {data?.map((item, index) => (
           <div className="min-w-[300px]" key={index}>
             <Link

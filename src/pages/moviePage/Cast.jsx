@@ -2,11 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Cast = ({ data }) => {
-  console.log(data);
   const { url } = useSelector((state) => state.home);
 
   return (
-    <div className="lg:container mx-auto px-5 mt-[80px] lg:-mt-[40px] overflow-x-scroll">
+    <div className="lg:container mx-auto px-5 mt-[80px] lg:-mt-[40px] overflow-x-scroll scrollHidden">
       <h2 className="text-[40px] py-2 font-bold">Actors</h2>
       <div className="flex gap-[20px]">
         {data?.map((item) => (
