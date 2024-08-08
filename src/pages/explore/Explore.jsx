@@ -94,7 +94,7 @@ const Explore = () => {
     <>
       <Navbar />
       <div className="lg:container mx-auto px-5 pt-[80px] ">
-        <div className="grid grid-cols-2 items-center mb-[50px]">
+        <div className="grid grid-cols-2 items-center mb-[0px]">
           <div>
             <h1 className="capitalize text-[35px]  font-semibold">
               Explore{" "}
@@ -314,7 +314,7 @@ const Explore = () => {
                       <span className="title font-semibold">
                         {(item.title || item.name || "").slice(0, 20)}...
                       </span>
-                      <span className="font-medium">
+                      <span className="font-medium text-sm">
                         {dayjs(item.release_date).format("MMM D, YYYY")}
                       </span>
                     </div>

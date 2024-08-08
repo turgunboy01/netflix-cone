@@ -77,7 +77,7 @@ const Search = () => {
                   className="movieCard"
                   onClick={() => navigate(`/${item?.media_type}/${item.id}`)}
                 >
-                  <div className="posterBlock">
+                  <div className="posterBlock h-[400px]">
                     <img
                       src={
                         item.poster_path
@@ -88,9 +88,11 @@ const Search = () => {
                       alt={item.title}
                     />
                   </div>
-                  <div className="textBlock">
-                    <span className="title">{item.title || item.name}</span>
-                    <span>
+                  <div className="textBlock flex justify-between pb-4 pt-2">
+                    <span className="title font-semibold">
+                      {(item.title || item.name || "").slice(0, 20)}...
+                    </span>
+                    <span className="text-sm">
                       {dayjs(item.release_date).format("MMM D, YYYY")}
                     </span>
                   </div>
@@ -112,12 +114,12 @@ const Search = () => {
                         ? url.backdrop + item.backdrop_path
                         : img
                     }
-                    className="cursor-pointer  rounded-[4px]  w-full h-[180px]"
+                    className="cursor-pointer  rounded-[4px] object-cover  w-full h-[400px]"
                     alt={item.title}
                   />
-                  <p className="absolute -bottom-[150px] text-[14px]  w-[140px] sm:w-[150px] left-3 ">
-                    {item.name || item.title}
-                  </p>
+                  <span className="title font-semibold flex justify-between pb-4 pt-2">
+                    {(item.title || item.name || "").slice(0, 20)}...
+                  </span>
                 </Link>
               </div>
             ))}
