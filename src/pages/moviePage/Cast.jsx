@@ -20,7 +20,6 @@ const Cast = ({ data }) => {
               className="w-[100%] h-[250px] rounded-2xl  "
             />
             <p className="text-[20px] font-medium pt-1">{item.name}</p>
-            <p className="text-[20px] font-medium pt-1">{item.name}</p>
             <p className="text-[#727272] font-semibold">{item.character}</p>
           </div>
         ))}
