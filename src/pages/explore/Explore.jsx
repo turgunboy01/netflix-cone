@@ -310,9 +310,11 @@ const Explore = () => {
                         alt={item.title}
                       />
                     </div>
-                    <div className="textBlock">
-                      <span className="title">{item.title || item.name}</span>
-                      <span>
+                    <div className="textBlock flex justify-between pb-4 pt-2">
+                      <span className="title font-semibold">
+                        {(item.title || item.name || "").slice(0, 20)}...
+                      </span>
+                      <span className="font-medium">
                         {dayjs(item.release_date).format("MMM D, YYYY")}
                       </span>
                     </div>
@@ -328,7 +330,7 @@ const Explore = () => {
         </>
       </div>
       <Footer />
-    </> 
+    </>
   );
 };
 
