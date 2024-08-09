@@ -101,7 +101,7 @@ const Explore = () => {
               <span className="italic">
                 {mediaType === "tv" ? "Tv Shows" : mediaType}
               </span>
-            </h1>
+            </h1> 
           </div>
           <div className="flex flex-col md:flex-row gap-4">
             <div className="w-full md:max-w-[500px] md:min-h-[250px]">
